@@ -14,7 +14,10 @@
     "start": "electron .",
     "dev": "cross-env NODE_ENV=development ts-node watch.ts",
     "dev:front": "vite app/front",
+    "build": "npm run build:front && npm run build:preload && npm run build:back",
     "build:front": "vue-tsc -p app/front/tsconfig.json && vite build app/front",
+    "build:preload": "tsc -p app/preload/tsconfig.json && vite build app/preload",
+    "build:back": "tsc -p app/back/tsconfig.json && vite build app/back",
     "preview": "vite preview"
   },
   "dependencies": {
