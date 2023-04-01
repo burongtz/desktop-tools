@@ -11,6 +11,7 @@
   "author": "Javier Burón",
   "license": "Apache License 2.0",
   "scripts": {
+    "start": "electron .",
     "dev:front": "vite app/front",
     "build:front": "vue-tsc -p app/front/tsconfig.json && vite build app/front",
     "preview": "vite preview"
