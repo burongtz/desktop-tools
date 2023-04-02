@@ -1,3 +1,7 @@
 <template>
-  <h1>Hello World!</h1>
+  <main-layout/>
 </template>
+
+<script setup lang="ts">
+import MainLayout from "./layouts/AdminLayout.vue"
+//</script>
