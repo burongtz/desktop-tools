@@ -9,9 +9,21 @@
     <hr>
     <ul class="nav nav-pills nav-flush flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active d-flex align-items-center" aria-current="page">
+        <a href="#" class="nav-link active d-flex align-items-center text-white" aria-current="page">
           <i class="fas fa-home"></i>
           <p>Home</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link d-flex align-items-center text-white" aria-current="page">
+          <i class="fas fa-qrcode"></i>
+          <p>QR Code</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link d-flex align-items-center text-white" aria-current="page">
+          <i class="fas fa-gears"></i>
+          <p>Settings</p>
         </a>
       </li>
     </ul>
