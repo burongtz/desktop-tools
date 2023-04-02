@@ -5,9 +5,14 @@
         <i class="fas fa-bars"></i>
       </button>
 
-      <div class="flex-shrink-0 dropdown">
-        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-           aria-expanded="false">
+
+      <div class="dropdown">
+        <a
+          href="#"
+          data-bs-toggle="dropdown"
+          class="d-block link-dark text-decoration-none dropdown-toggle"
+          aria-expanded="false"
+        >
           <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
         <ul class="dropdown-menu text-small shadow">
@@ -24,9 +29,17 @@
 </template>
 
 <script setup lang="ts">
-const emits = defineEmits(['toggle-sidebar']);
+const emits = defineEmits(['toggle-sidebar'])
 
-function toggleSidebar() {
+function toggleSidebar(): void {
   emits('toggle-sidebar')
 }
+
 //</script>
+
+<style scoped lang="scss">
+.dropdown-menu {
+  left: unset;
+  right: 0;
+}
+</style>
