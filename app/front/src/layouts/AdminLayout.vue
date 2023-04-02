@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-nowrap vh-100">
+  <div class="d-flex flex-nowrap vh-100 overflow-hidden">
     <sidebar-admin-layout :is-expanded="sidebarExpanded"/>
 
     <div class="w-100">
