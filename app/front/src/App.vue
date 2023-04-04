@@ -1,7 +1,7 @@
 <template>
-  <main-layout/>
+  <home-page/>
 </template>
 
 <script setup lang="ts">
-import MainLayout from "./layouts/AdminLayout.vue"
+import HomePage from "./pages/HomePage.vue"
 //</script>
