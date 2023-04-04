@@ -4,6 +4,9 @@
 
     <div class="w-100">
       <navbar-admin-layout @toggle-sidebar="toggleSidebar"/>
+      <main class="container-fluid my-3">
+        <slot/>
+      </main>
     </div>
   </div>
 </template>
