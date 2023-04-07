@@ -16,7 +16,7 @@ const qrService = ServiceFactory.create<QrService>(QrService)
 const htmlSvg = ref<string>('');
 
 async function generateQr(): Promise<void> {
-  const svg = await qrService.generate()
+  const svg = await qrService.generate({content: 'Andy'})
   htmlSvg.value = DOMPurify.sanitize(svg)
 }
 
