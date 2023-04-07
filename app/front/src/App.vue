@@ -10,4 +10,4 @@ export default {
     HomePage,
   }
 }
-//</script>
+</script>
