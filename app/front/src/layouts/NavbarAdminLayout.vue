@@ -6,7 +6,7 @@
       </button>
 
 
-      <div class="dropdown">
+      <div class="dropdown" v-if="false">
         <a
           href="#"
           data-bs-toggle="dropdown"
