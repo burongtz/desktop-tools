@@ -3,12 +3,12 @@ import {ResponseModel} from "../models/response-model";
 import QRCode from 'qrcode'
 
 export class QrController {
-  public async generate(event: IpcMainInvokeEvent, ...args: any[]): Promise<ResponseModel<string>> {
+  public async generate(event: IpcMainInvokeEvent, ...args: any[]): Promise<ResponseModel> {
     try {
       const foo = await QRCode.toString('Andy', {type: 'svg'});
       return ResponseModel.doSuccess<string>(foo)
-    } catch (e) {
-      console.error(e)
+    } catch (e: any) {
+      return ResponseModel.doError(e.message);
     }
   }
 }

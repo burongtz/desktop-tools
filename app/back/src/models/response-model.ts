@@ -1,8 +1,8 @@
 import _ from 'lodash'
 
-interface ResponseData<T> {
+interface ResponseData {
   status: string,
-  readonly data?: T,
+  readonly data?: any,
   readonly error?: { message: string }
 }
 
@@ -10,9 +10,9 @@ const DEFAULT_RESPONSE_DATA = {
   status: 'success',
 }
 
-export class ResponseModel<T> {
+export class ResponseModel {
   constructor(
-    public readonly data: Readonly<ResponseData<T>> = _.cloneDeep(DEFAULT_RESPONSE_DATA)
+    public readonly data: Readonly<ResponseData> = _.cloneDeep(DEFAULT_RESPONSE_DATA)
   ) {
   }
 
@@ -21,5 +21,14 @@ export class ResponseModel<T> {
       status: 'success',
       data: data,
     });
+  }
+
+  public static doError(message: string) {
+    return new ResponseModel({
+      status: 'error',
+      error: {
+        message: message,
+      }
+    })
   }
 }
