@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import AdminLayout from '../layouts/AdminLayout.vue'
+import {IpcHelper} from "../helpers/ipc-helper";
 
 async function generateQr(): Promise<void> {
   await IpcHelper.invoke('qrs.generate')
