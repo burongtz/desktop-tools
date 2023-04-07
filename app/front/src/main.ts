@@ -5,5 +5,8 @@ import './style.css'
 import './assets/app.scss'
 import App from './App.vue'
 import './globals'
+import {router} from './routes/routes'
 
-createApp(App).mount('#app')
+createApp(App)
+  .use(router)
+  .mount('#app')

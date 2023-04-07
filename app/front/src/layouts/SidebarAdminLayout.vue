@@ -19,7 +19,7 @@
         <a
           href="#"
           :class="['nav-link d-flex align-items-center text-white', {'active': item.isActive}]"
-          @click="item.onClicked"
+          @click="item.onClicked()"
           aria-current="page"
         >
           <i :class="['fas', item.icon]"></i>
