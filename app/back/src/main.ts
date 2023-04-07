@@ -1,5 +1,7 @@
-import {app} from 'electron'
+import {app, ipcMain} from 'electron'
 import {AppHelper} from "./helpers/app-helper";
+import {QrController} from "./controllers/qr-controller";
+
 
 async function main(): Promise<void> {
   try {
@@ -17,7 +19,8 @@ async function main(): Promise<void> {
 }
 
 async function handleIpcMain(): Promise<void> {
-  console.log('Handle ipc main!')
+  const qrController = new QrController()
+  ipcMain.handle('back:qrs.generate', qrController.generate)
 }
 
 main().catch()
