@@ -7,7 +7,7 @@ export class QrService {
   }
 
   public async generate(): Promise<string> {
-    const res = await IpcHelper.invoke('qrs.generate')
+    const res = await this.ipcHelper.invoke('qrs.generate')
     return res.data.data
   }
 }
