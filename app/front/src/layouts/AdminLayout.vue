@@ -2,7 +2,7 @@
   <div class="d-flex flex-nowrap vh-100 overflow-hidden">
     <sidebar-admin-layout :is-expanded="sidebarExpanded"/>
 
-    <div class="w-100">
+    <div class="w-100 overflow-auto">
       <navbar-admin-layout @toggle-sidebar="toggleSidebar"/>
       <main class="container-fluid my-3">
         <slot/>
