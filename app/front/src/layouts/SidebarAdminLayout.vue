@@ -18,8 +18,8 @@
       >
         <a
           href="#"
-          :class="['nav-link d-flex align-items-center text-white', {'active': item.isActive}]"
-          @click="item.onClicked()"
+          :class="['nav-link d-flex align-items-center text-white', {'active': item.value === route.name}]"
+          @click.prevent="item.onClicked"
           aria-current="page"
         >
           <i :class="['fas', item.icon]"></i>
@@ -31,6 +31,7 @@
 </template>
 
 <script setup lang="ts">
+import {useRoute} from "vue-router";
 import {router} from "../routes/routes";
 
 interface Props {
@@ -45,12 +46,12 @@ interface Item {
   isActive?: boolean,
 }
 
+const route = useRoute();
 const {isExpanded} = defineProps<Props>()
 const items: Item[] = [{
   title: 'Home',
   icon: 'fa-home',
   value: 'home',
-  isActive: true,
   onClicked: () => router.push({name: 'home'}),
 }, {
   title: 'QR Code',
