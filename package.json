@@ -1,7 +1,7 @@
 {
   "name": "desktop-tools",
   "private": true,
-  "version": "0.0.1",
+  "version": "v0.0.1",
   "description": "",
   "main": "dist/main.js",
   "keywords": [
