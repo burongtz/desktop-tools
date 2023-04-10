@@ -56,7 +56,10 @@
   "build": {
     "appId": "mx.buron.desktoptools",
     "files": [
-      "dist/**/*",
+      "dist/assets/**/*",
+      "dist/main.js",
+      "dist/preload.js",
+      "dist/index.html",
       "package.json"
     ],
     "linux": {
