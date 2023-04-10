@@ -55,6 +55,10 @@
   },
   "build": {
     "appId": "mx.buron.desktoptools",
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
     "linux": {
       "target": [
         "deb"
