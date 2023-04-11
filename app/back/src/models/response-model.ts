@@ -16,10 +16,10 @@ export class ResponseModel {
   ) {
   }
 
-  public static doSuccess<T>(data: T) {
+  public static doSuccess<T>(data?: T) {
     return new ResponseModel({
       status: 'success',
-      data: data,
+      data,
     });
   }
 
