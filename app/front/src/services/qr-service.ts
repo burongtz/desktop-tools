@@ -10,4 +10,8 @@ export class QrService {
     const res = await this.ipcHelper.invoke('qrs.generate', args)
     return res.data.data
   }
+
+  public async saveAs(svgHtml: string, fileType: 'svg' | 'png'): Promise<void> {
+    const foo = await this.ipcHelper.invoke('qrs.saveAs', {svgHtml, fileType})
+  }
 }
