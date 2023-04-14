@@ -16,7 +16,7 @@
         <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
           <div class="ratio ratio-1x1">
             <template v-if="shownSvg">
-              <span v-html="svgHTML"></span>
+              <div class="svg-container" v-html="svgHTML"></div>
             </template>
             <span class="bg-light" v-else></span>
           </div>
@@ -37,11 +37,20 @@
             >
               Clear
             </button>
-            <div class="d-flex gap-3 w-100" v-if="false">
-              <button class="btn btn-success w-50" type="submit">
+
+            <div class="d-flex gap-3 w-100">
+              <button
+                class="btn btn-success w-50"
+                type="button"
+                @click="handleDownloadSvg"
+              >
                 Download SVG
               </button>
-              <button class="btn btn-success" type="submit">
+              <button
+                class="btn btn-success w-50"
+                type="button"
+                @click="handleDownloadPng"
+              >
                 Download PNG
               </button>
             </div>
@@ -69,9 +78,18 @@ async function handleSubmit(): Promise<void> {
   svgHTML.value = DOMPurify.sanitize(svg)
 }
 
-async  function handleReset(): Promise<void> {
+async function handleDownloadSvg(): Promise<void> {
+  await qrService.saveAs(svgHTML.value, 'svg')
+}
+
+async function handleDownloadPng(): Promise<void> {
+  await qrService.saveAs(svgHTML.value, 'png')
+}
+
+async function handleReset(): Promise<void> {
   svgHTML.value = ''
   form.value.content = ''
 }
 
-//</script>
+</script>
+
