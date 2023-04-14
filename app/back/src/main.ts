@@ -20,7 +20,8 @@ async function main(): Promise<void> {
 
 async function handleIpcMain(): Promise<void> {
   const qrController = new QrController()
-  ipcMain.handle('back:qrs.generate', qrController.generate)
+  ipcMain.handle('back:qrs.generate', qrController.generate.bind(qrController))
+  ipcMain.handle('back:qrs.saveAs', qrController.saveAs.bind(qrController))
 }
 
 main().catch()
